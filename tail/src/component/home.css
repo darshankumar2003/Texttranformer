@@ -1,0 +1,126 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+
+.heading {
+    color: #00bcd4;
+    margin-top: 20px;
+}
+
+
+#txt {
+    margin: 20px auto;
+    display: block;
+    width: 80%;
+    height: 150px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background-color: #2c2c2c;
+    color: white;
+    resize: none;
+    outline: none;
+}
+
+
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#btn, #btn1, #btn2 ,#btn3{
+    background-color: #00bcd4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#btn:hover, #btn1:hover, #btn2:hover,#btn3 {
+    background-color: #0288d1;
+}
+
+
+
+.textarea-container {
+    position: relative;
+    margin: 20px auto;
+    width: 90%;
+    height: 300px; 
+    border-radius: 10px;
+    overflow: hidden; 
+    z-index: 0;
+}
+
+
+.textarea-container::after,
+.textarea-container::before {
+    content: ' ';
+    position: absolute;
+    height: 300%; 
+    width: 300%; 
+    background-image: conic-gradient(from var(--angle), transparent 70%, rgb(27, 199, 242));
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: -1;
+    animation: spin 3s linear infinite;
+    will-change: transform;
+}
+
+
+.textarea-container::before {
+    filter: blur(3rem);
+    opacity: 0.5;
+}
+
+
+#txt {
+    width: 100%;
+    height: 80%;
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    background-color: rgb(37, 34, 34);
+    color: white;
+    resize: none;
+    outline: none;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+
+@keyframes spin {
+    from {
+        --angle: 0deg;
+    }
+    to {
+        --angle: 360deg;
+    }
+}
+
+.output-text {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
+    word-wrap: break-word;
+}
